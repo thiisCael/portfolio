@@ -28,14 +28,17 @@ h4 {
 }
 
 /* Cabeçalho */
-header {
-  padding: 20px;
+
+/* Menu Desktop */
+.nav-list { 
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: center;
 }
 
-header nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+header {
+  padding: 20px;
 }
 
 header nav a {
@@ -102,9 +105,76 @@ span {
   padding: 40px 20px;
 }
 
+.meu-botao { 
+   display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
 /* Rodapé */
 
 footer {
   text-align: center;
   padding: 20px;
 }
+
+
+/* Menu ham */ 
+.menu { 
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Responsivo */  
+
+@media (max-width: 768px) {
+  .nav-list{ 
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .nav-list.active { 
+    display: flex;
+  }
+  .menu { 
+    display: block;
+  }
+  #sobre {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #sobre img {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  /*   Navegação do cabeçalho */ 
+  header nav { 
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Grid de projetos */
+  .grid-projetos {
+    grid-template-columns: 1fr;
+  }
+} 
+
+@media (max-width: 480px) {
+  #sobre img {
+    width: 150px;
+  }
+  section{ 
+    padding: 20px 10px;
+  }
+}
+
+
