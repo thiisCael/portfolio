@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:700|Inter:400");
 
+/* ========================= 
+  Variáveis e cores globais
+  ========================= */
 :root {
   --text: #e9f7f7;
   --background: #091f1f;
@@ -9,6 +12,9 @@
   --programadores-amanha: #ffd700;
 }
 
+/* ========================= 
+    Tipografia e Layout Base
+  ========================= */
 body {
   font-family: "Inter";
   font-weight: 400;
@@ -27,10 +33,10 @@ h4 {
   padding: 10px;
 }
 
-/* Cabeçalho */
-
-/* Menu Desktop */
-.nav-list { 
+/* ========================= 
+    Cabeçalho & Navegação 
+  ========================= */
+.nav-list {
   display: flex;
   list-style: none;
   gap: 20px;
@@ -54,11 +60,16 @@ header nav a {
   margin: 20px 0;
   width: 100%;
 }
+.nav-list a:hover,
+.nav-list a:focus { 
+  color: var(--accent);
+}
 
 /* Sobre mim */
 span {
   color: var(--programadores-amanha);
 }
+
 #sobre {
   display: flex;
   align-items: center;
@@ -76,27 +87,49 @@ span {
 
 /* Projetos */
 #projetos {
-  padding: 40px 20px;
-  max-width: 1000px;
+  padding: 60px 20px;
+  max-width: 1200px;
   margin: auto;
   text-align: center;
 }
+
 .grid-projetos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-.projeto {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
   padding: 20px;
-  border-radius: 8px;
+}
+
+.projeto {
+  padding: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
   box-shadow: 0 0 10px var(--secondary);
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projeto:hover,
+.projeto:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px var(--primary);
 }
 
 .projeto img {
   width: 100%;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+} 
+.projeto h3 {
+  margin-bottom: 12px;
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+.projeto p {
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* Contato */
@@ -104,16 +137,40 @@ span {
   text-align: center;
   padding: 40px 20px;
 }
+#contato a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 700;
+}
+#contato a:hover,
+#contato a:focus {
+  color: var(--accent);
+  text-decoration: underline;
+}
 
-.meu-botao { 
-   display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--secondary);
-    color: var(--text);
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+.meu-botao {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 16px;
+  background-color: var(--secondary);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.meu-botao:hover,
+.meu-botao:focus {
+  background-color: var(--accent);
+  /* cor de destaque no hover */
+  transform: translateY(-2px);
+  /* leve “flutuação” */
+}
+.meu-botao:focus-visible {
+  outline: 2px solid var(--accent);
+  /* acessibilidade: foco visível */
+  outline-offset: 3px;
 }
 
 /* Rodapé */
@@ -124,29 +181,38 @@ footer {
 }
 
 
-/* Menu ham */ 
-.menu { 
+/* Menu ham */
+.menu {
   display: none;
+  border: none;
   font-size: 28px;
   cursor: pointer;
   color: var(--text);
+  background: transparent;
 }
 
-/* Responsivo */  
+#mobile-menu:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+/* Responsivo */
 
 @media (max-width: 768px) {
-  .nav-list{ 
+  .nav-list {
     display: none;
     flex-direction: column;
     text-align: center;
     gap: 10px;
   }
-  .nav-list.active { 
+
+  .nav-list.active {
     display: flex;
   }
-  .menu { 
+
+  .menu {
     display: block;
   }
+
   #sobre {
     flex-direction: column;
     text-align: center;
@@ -156,8 +222,9 @@ footer {
     width: 80%;
     margin-bottom: 20px;
   }
-  /*   Navegação do cabeçalho */ 
-  header nav { 
+
+  /*   Navegação do cabeçalho */
+  header nav {
     flex-direction: column;
     gap: 10px;
   }
@@ -166,15 +233,14 @@ footer {
   .grid-projetos {
     grid-template-columns: 1fr;
   }
-} 
+}
 
 @media (max-width: 480px) {
   #sobre img {
     width: 150px;
   }
-  section{ 
+
+  section {
     padding: 20px 10px;
   }
 }
-
-

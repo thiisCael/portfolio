@@ -2,10 +2,13 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+      content="Portfólio de Cael, desenvolvedor formação. Projetos práticos em front-end e back-end.">
+    <title> Portfólio </title>
     <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/web" href="assets/image/pessoas.webp">
   </head>
   <body>
     <!-- Cabeçalho -->
@@ -13,10 +16,10 @@
     <header>
       <h1> Cael </h1>
       <nav>
-        <div class="menu" id="mobile-menu">
+        <button class="menu" id="mobile-menu" type="button" aria-label="Abrir menu" aria-controls="primary-navigation"
+          aria-expanded="false">
           &#9776;
-          <!-- icone do hamburguer -->
-        </div>
+        </button>
         <ul class="nav-list"> 
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#projetos">Projetos</a></li>
@@ -26,10 +29,11 @@
       <hr class="minha-linha" />
     </header>
 
+    
+  <main> 
     <!-- Sobre mim -->
-
     <section id="sobre">
-      <img src="assets/image/fotouser.JPG" alt="Minha Foto" />
+      <img src="assets/image/fotouser.JPG" alt="Minha foto, pessoa parda, com cabelo afro na cor de castanho escuro com roupa preta e segurando o celular" />
       <div>
         <h2>Sobre Mim</h2>
         <p>
@@ -51,7 +55,7 @@
 
       <div class="grid-projetos">
         <div class="projeto">
-          <img src="assets/projetos/Projeto1.svg" alt="Projeto1" />
+          <img src="assets/projetos/Projeto1.svg" alt="Layout do site de web site de barbearia em modo celular" />
           <h3>Projeto Barbearia</h3>
           <p>
             Colaboro em um projeto no GitHub, desenvolvendo um site do zero para
@@ -63,7 +67,7 @@
           <a href="https://github.com/MatheusCalixtoDev/projeto-agendamento-para-barbeiros" class="meu-botao">Ver projeto</a> 
         </div>
         <div class="projeto">
-          <img src="assets/projetos/projeto2.svg" alt="Projeto2" />
+          <img src="assets/projetos/projeto2.svg" alt="Task Manager no terminal com opções" />
           <h3>Task Manager</h3>
           <p>
             Apresento um Task Manager em Java, totalmente operável via terminal.
@@ -76,7 +80,7 @@
           <a href="https://github.com/devrayssa/TaskManager" class="meu-botao">Ver projeto</a>
         </div>
         <div class="projeto">
-          <img src="assets/projetos/PROJETO3.png" alt="Projeto3" />
+          <img src="assets/projetos/PROJETO3.png" alt="Web site de cosmeticos no celular" />
           <h3>Cosmeticos Web Site - E-commerce</h3>
           <p>
             Desenvolvi este site com o objetivo de testar e aprimorar meus conhecimentos em front-end. O projeto é totalmente responsivo, garantindo uma boa experiência em diferentes dispositivos, e inclui botões interativos que demonstram funcionalidades básicas de navegação. Durante o desenvolvimento, enfrentei desafios significativos que me permitiram aplicar conceitos de layout, estilização e responsividade, consolidando minhas habilidades práticas em desenvolvimento web.
@@ -84,16 +88,19 @@
          <a href="https://github.com/devrayssa/Cosmetics-Website" class="meu-botao">Ver projeto</a>
         </div>
       </div>
+
     </section>
     <section id="contato">
       <h2>Contato</h2>
-      <p>Email: caael.souz4@gmail.com</p>
+      <p>Email: <a href="mailto:caael.souz4@gmail.com">caael.souz4@gmail.com</a></p>
     </section>
+  </main>
+
     <!-- Rodapé -->
-    <hr class="minha-linha" />
     <footer>
+      <hr class="minha-linha" />
       <p>© 2025 Cael Souza</p>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>
