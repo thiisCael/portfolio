@@ -29,7 +29,8 @@ A proposta é unir **design responsivo**, **acessibilidade** e **boas práticas 
 ├─ js/
 │  └─ script.js
 └─ assets/
-   └─ imagens e ícones
+   └─ imagens
+   └─ projetos
 ```
 
 ## ✨ Destaques
